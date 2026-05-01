@@ -482,3 +482,4 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+/TypingIndicator/Properties/localSettings.props
