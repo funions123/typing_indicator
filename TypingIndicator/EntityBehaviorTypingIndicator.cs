@@ -143,7 +143,7 @@ namespace TypingIndicator
             Directory.CreateDirectory(configPath);
             Directory.CreateDirectory(configOutOfDatePath);
 
-            var currentVersion = api.ModLoader.GetMod("typing_indicator").Info.Version;
+            var currentVersion = api.ModLoader.GetMod(TypingIndicator.ModID).Info.Version;
             Configuration? serverConfiguration = api.LoadModConfig<Configuration>(configFilePath);
 
             if(serverConfiguration != null)

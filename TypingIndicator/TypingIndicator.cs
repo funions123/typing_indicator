@@ -8,10 +8,13 @@ namespace TypingIndicator
     {
         ICoreClientAPI? capi;
 
+        public static string ModID { get; private set; } = "";
+
         // Dictionary<string, string> typingIndicatorLocalizations;
 
         public override void Start(ICoreAPI api)
         {
+            ModID = Mod.Info.ModID;
             api.RegisterEntityBehaviorClass("typingindicator", typeof(EntityBehaviorTypingIndicator));
             base.Start(api);
         }

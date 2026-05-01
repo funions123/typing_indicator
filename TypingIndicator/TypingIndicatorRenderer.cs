@@ -79,11 +79,11 @@ namespace TypingIndicator
 			}
 			else
 			{
-				IMountable? thisMount = (entity as EntityAgent)?.MountedOn;
-				IMountable selfMount = entityPlayer.MountedOn;
+				IMountableSeat? thisMount = (entity as EntityAgent)?.MountedOn;
+				IMountableSeat? selfMount = entityPlayer.MountedOn;
 				if (thisMount?.MountSupplier != null && thisMount.MountSupplier == selfMount?.MountSupplier)
 				{
-					Vec3f mpos = thisMount.MountSupplier.GetMountOffset(entity);
+					Vec3f mpos = thisMount.Config.RiderOffset;
 					typingIndicatorPos = new Vec3d(entityPlayer.CameraPos.X + entityPlayer.LocalEyePos.X, entityPlayer.CameraPos.Y + 0.3 + entityPlayer.LocalEyePos.Y, entityPlayer.CameraPos.Z + entityPlayer.LocalEyePos.Z);
 					typingIndicatorPos.Add(mpos);
 				}
