@@ -83,10 +83,10 @@ namespace TypingIndicator
 				IMountableSeat? selfMount = entityPlayer.MountedOn;
 				if (thisMount?.MountSupplier != null && thisMount.MountSupplier == selfMount?.MountSupplier)
 				{
-					Vec3f mpos = thisMount.Config.RiderOffset;
-					typingIndicatorPos = new Vec3d(entityPlayer.CameraPos.X + entityPlayer.LocalEyePos.X, entityPlayer.CameraPos.Y + 0.3 + entityPlayer.LocalEyePos.Y, entityPlayer.CameraPos.Z + entityPlayer.LocalEyePos.Z);
-					typingIndicatorPos.Add(mpos);
-				}
+                    Vec3f? mpos = thisMount.Config.RiderOffset;
+                    typingIndicatorPos = new Vec3d(entityPlayer.CameraPos.X + entityPlayer.LocalEyePos.X, entityPlayer.CameraPos.Y + 0.3 + entityPlayer.LocalEyePos.Y, entityPlayer.CameraPos.Z + entityPlayer.LocalEyePos.Z);
+                    if (mpos != null) typingIndicatorPos.Add(mpos);
+                }
 				else
 				{
 					typingIndicatorPos = new Vec3d(entity.Pos.X, entity.Pos.Y + (double)entity.SelectionBox.Y2 + 0.1, entity.Pos.Z);
